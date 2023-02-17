@@ -1,5 +1,5 @@
 {% set name = "shimmy" %}
-{% set version = "0.1.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/Shimmy-{{ version }}.tar.gz
-  sha256: deb0d396e8fd7702ed08997c7f3c23af9b422c1b04df8b0db9e3c5b15e2d473b
+  sha256: 7b96915445ee5488dcb19ccf52ce5581d6f00cc5cf0e0dff36b16cd65bffcb75
 
 build:
   noarch: python
