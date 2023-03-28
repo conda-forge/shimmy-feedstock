@@ -1,11 +1,11 @@
-About shimmy
-============
+About shimmy-split-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/shimmy-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/Farama-Foundation/Shimmy
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/shimmy-feedstock/blob/main/LICENSE.txt)
 
 Summary: API for converting popular non-gymnasium environments to a gymnasium compatible environment.
 
@@ -28,27 +28,30 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-shimmy-green.svg)](https://anaconda.org/conda-forge/shimmy) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/shimmy.svg)](https://anaconda.org/conda-forge/shimmy) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/shimmy.svg)](https://anaconda.org/conda-forge/shimmy) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/shimmy.svg)](https://anaconda.org/conda-forge/shimmy) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-shimmy--all-green.svg)](https://anaconda.org/conda-forge/shimmy-all) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/shimmy-all.svg)](https://anaconda.org/conda-forge/shimmy-all) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/shimmy-all.svg)](https://anaconda.org/conda-forge/shimmy-all) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/shimmy-all.svg)](https://anaconda.org/conda-forge/shimmy-all) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-shimmy--atari-green.svg)](https://anaconda.org/conda-forge/shimmy-atari) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/shimmy-atari.svg)](https://anaconda.org/conda-forge/shimmy-atari) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/shimmy-atari.svg)](https://anaconda.org/conda-forge/shimmy-atari) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/shimmy-atari.svg)](https://anaconda.org/conda-forge/shimmy-atari) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-shimmy--gym-green.svg)](https://anaconda.org/conda-forge/shimmy-gym) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/shimmy-gym.svg)](https://anaconda.org/conda-forge/shimmy-gym) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/shimmy-gym.svg)](https://anaconda.org/conda-forge/shimmy-gym) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/shimmy-gym.svg)](https://anaconda.org/conda-forge/shimmy-gym) |
 
-Installing shimmy
-=================
+Installing shimmy-split
+=======================
 
-Installing `shimmy` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `shimmy-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `shimmy` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `shimmy, shimmy-all, shimmy-atari, shimmy-gym` can be installed with `conda`:
 
 ```
-conda install shimmy
+conda install shimmy shimmy-all shimmy-atari shimmy-gym
 ```
 
 or with `mamba`:
 
 ```
-mamba install shimmy
+mamba install shimmy shimmy-all shimmy-atari shimmy-gym
 ```
 
 It is possible to list all of the versions of `shimmy` available on your platform with `conda`:
@@ -118,17 +121,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating shimmy-feedstock
-=========================
+Updating shimmy-split-feedstock
+===============================
 
-If you would like to improve the shimmy recipe or build a new
+If you would like to improve the shimmy-split recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/shimmy-feedstock are
+Note that all branches in the conda-forge/shimmy-split-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
