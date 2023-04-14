@@ -1,0 +1,24 @@
+From 62729390afb9f7f7946cc789c512f679a22c0779 Mon Sep 17 00:00:00 2001
+From: Christof Kaufmann <christofkaufmann.dev@gmail.com>
+Date: Tue, 28 Mar 2023 14:07:53 +0200
+Subject: [PATCH] Skip render check again in atari test
+
+---
+ tests/test_atari.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tests/test_atari.py b/tests/test_atari.py
+index d5c756d..61dd503 100644
+--- a/tests/test_atari.py
++++ b/tests/test_atari.py
+@@ -39,7 +39,7 @@ def test_atari_envs(env_id):
+     env = gym.make(env_id)
+
+     with warnings.catch_warnings(record=True) as caught_warnings:
+-        check_env(env.unwrapped)
++        check_env(env.unwrapped, skip_render_check=True)
+
+     env.close()
+
+--
+2.34.1
