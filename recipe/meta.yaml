@@ -36,9 +36,15 @@ outputs:
       host:
         - python >=3.7
         - pip
+        - gymnasium >=0.27.0
+        - cloudpickle
+        - jax-jumpy
+        - numpy >=1.18.0
+        - typing-extensions
       run:
         - python >=3.7
         - numpy >=1.18.0
+        - gymnasium >=0.27.0
     test:
       imports:
         - {{ name|lower }}
@@ -112,11 +118,10 @@ outputs:
       source_files:
         - tests/
       requires:
-        - python <=3.10
         - pytest
         - pip
       commands:
-        - pip install --no-cache-dir 'autorom[accept-rom-license]==0.6.0'
+        - pip install --no-cache-dir 'autorom[accept-rom-license]>=0.6.1'
         - pytest -v tests/test_atari.py
 
   - name: {{ name|lower }}-imageio
