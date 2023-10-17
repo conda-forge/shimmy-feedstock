@@ -1,5 +1,5 @@
 {% set name = "shimmy" %}
-{% set version = "1.2.1" %}
+{% set version = "1.3.0" %}
 
 package:
   name: {{ name|lower }}-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/Farama-Foundation/Shimmy/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: f11e867fd5b1b85d768531ce13dd1d69e08d3371e2bc9883c1edae84834a4ffa
+  sha256: 3ddbe2f813ef177058ab861871829e434da571d06379efe21d5aa8081afb728f
   patches:
     - 0001-skip-render-check-in-atari-test.patch
 
