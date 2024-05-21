@@ -102,27 +102,27 @@ outputs:
       commands:
         - pytest -v tests/test_gym.py
 
-  - name: {{ name|lower }}-atari
-    build:
-      noarch: python
-    requirements:
-      host:
-        - python
-      run:
-        - python
-        - {{ pin_subpackage('shimmy', exact=True) }}
-        - ale-py >=0.8.1,<0.9
-    test:
-      imports:
-        - {{ name|lower }}
-      source_files:
-        - tests/
-      requires:
-        - pytest
-        - pip
-      commands:
-        - pip install --no-cache-dir 'autorom[accept-rom-license]>=0.6.1'
-        - pytest -v tests/test_atari.py
+  # - name: {{ name|lower }}-atari
+  #   build:
+  #     noarch: python
+  #   requirements:
+  #     host:
+  #       - python
+  #     run:
+  #       - python
+  #       - {{ pin_subpackage('shimmy', exact=True) }}
+  #       - ale-py >=0.8.1,<0.9
+  #   test:
+  #     imports:
+  #       - {{ name|lower }}
+  #     source_files:
+  #       - tests/
+  #     requires:
+  #       - pytest
+  #       - pip
+  #     commands:
+  #       - pip install --no-cache-dir 'autorom[accept-rom-license]>=0.6.1'
+  #       - pytest -v tests/test_atari.py
 
   - name: {{ name|lower }}-imageio
     build:
