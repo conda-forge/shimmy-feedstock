@@ -8,8 +8,8 @@ package:
 source:
   url: https://github.com/Farama-Foundation/Shimmy/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 4a6447c441942e2b706d218d1cc6cd810faffcfb2788860b7b7c8ce349e60b21
-  patches:
-    - 0001-skip-render-check-in-atari-test.patch
+  # patches:
+  #   - 0001-skip-render-check-in-atari-test.patch
 
 build:
   noarch: python
