@@ -13,16 +13,16 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
 
 # Maybe need these up here for conda-smithy to handle them properly.
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - numpy >=1.18.0
     - gymnasium >=0.27.0
 
@@ -35,7 +35,7 @@ outputs:
       build:
         - python >=3.7
       host:
-        - python >=3.7
+        - python {{ python_min }}
         - pip
         - gymnasium >=0.27.0
         - cloudpickle
@@ -44,10 +44,12 @@ outputs:
         - typing-extensions
         - setuptools
       run:
-        - python >=3.7
+        - python >={{ python_min }}
         - numpy >=1.18.0
         - gymnasium >=0.27.0
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - {{ name|lower }}
 
@@ -56,9 +58,9 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python
+        - python {{ python_min }}
       run:
-        - python
+        - python >={{ python_min }}
         - {{ pin_subpackage('shimmy-gym', exact=True) }}
         # - {{ pin_subpackage('shimmy-atari', exact=True) }}
         # see below
@@ -81,6 +83,7 @@ outputs:
       requires:
         - pytest
         - pip
+        - python {{ python_min }}
       commands:
         - pip check
 
@@ -89,10 +92,10 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python
+        - python {{ python_min }}
         - setuptools
       run:
-        - python
+        - python >={{ python_min }}
         - {{ pin_subpackage('shimmy', exact=True) }}
         - gym >=0.21
     test:
@@ -102,6 +105,7 @@ outputs:
         - tests/
       requires:
         - pytest
+        - python {{ python_min }}
       commands:
         - pytest -v tests/test_gym.py
 
@@ -134,14 +138,16 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python
+        - python {{ python_min }}
         - setuptools
       run:
-        - python
+        - python >={{ python_min }}
         - {{ pin_subpackage('shimmy', exact=True) }}
         - mujoco-python >=2.2.0,<2.4
         - imageio >=2.14.1
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         # There are no tests in the source code for shimmy-imageio or shimmy-mujoco
 
@@ -152,10 +158,10 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python
+        - python {{ python_min }}
         - setuptools
       run:
-        - python
+        - python >={{ python_min }}
         - {{ pin_subpackage('shimmy', exact=True) }}
         - dm-control >=1.0.10
         - imageio
@@ -167,6 +173,7 @@ outputs:
         - tests/
       requires:
         - pytest
+        - python {{ python_min }}
       commands:
         - pytest -v tests/test_dm_control.py
 
@@ -178,10 +185,10 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python
+        - python {{ python_min }}
         - setuptools
       run:
-        - python
+        - python >={{ python_min }}
         - {{ pin_subpackage('shimmy', exact=True) }}
         - dm-control >=1.0.10
         - pettingzoo >=1.22.4
@@ -192,6 +199,7 @@ outputs:
         - tests/
       requires:
         - pytest
+        - python {{ python_min }}
       commands:
         - pytest -v tests/test_dm_control_multi_agent.py
 
@@ -202,10 +210,10 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python
+        - python {{ python_min }}
         - setuptools
       run:
-        - python
+        - python >={{ python_min }}
         - {{ pin_subpackage('shimmy', exact=True) }}
         - open_spiel >=1.2
         - pettingzoo >=1.22.4
@@ -216,6 +224,7 @@ outputs:
         - tests/
       requires:
         - pytest
+        - python {{ python_min }}
       commands:
         - pytest -v tests/test_openspiel.py
 
@@ -226,10 +235,10 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python
+        - python {{ python_min }}
         - setuptools
       run:
-        - python
+        - python >={{ python_min }}
         - {{ pin_subpackage('shimmy', exact=True) }}
         - pettingzoo >=1.22.4
     test:
@@ -241,6 +250,7 @@ outputs:
         - pytest
         # test will be skipped without meltingpot, but it is not yet available on conda-forge
         # - meltingpot
+        - python {{ python_min }}
       commands:
         - pytest -v tests/test_meltingpot.py
 
@@ -251,10 +261,10 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python
+        - python {{ python_min }}
         - setuptools
       run:
-        - python
+        - python >={{ python_min }}
         - {{ pin_subpackage('shimmy', exact=True) }}
         - bsuite >=0.3.5
     test:
@@ -264,6 +274,7 @@ outputs:
         - tests/
       requires:
         - pytest
+        - python {{ python_min }}
       commands:
         - pytest -v tests/test_bsuite.py
 
